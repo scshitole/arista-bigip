@@ -1,0 +1,23 @@
+Create veth Pairs and Attach to Bridge + Containers
+Run this for each switch:
+
+sudo ip link add veth-ceos1 type veth peer name veth-peer-ceos1
+sudo ip link set veth-ceos1 up
+sudo brctl addif br-lab veth-ceos1
+
+# Move the peer into ceos1 namespace
+sudo ip link set veth-peer-ceos1 netns 12345
+sudo nsenter -t 12345 -n ip link set veth-peer-ceos1 name eth3
+sudo nsenter -t 12345 -n ip link set eth3 up
+
+
+--------switch2
+sudo ip link add veth-ceos2 type veth peer name veth-peer-ceos2
+sudo ip link set veth-ceos2 up
+sudo brctl addif br-lab veth-ceos2
+
+# Move the peer into ceos2 namespace
+sudo ip link set veth-peer-ceos2 netns 23456
+sudo nsenter -t 23456 -n ip link set veth-peer-ceos2 name eth3
+sudo nsenter -t 23456 -n ip link set eth3 up
+
