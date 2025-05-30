@@ -25,6 +25,15 @@ sudo ip link set eth1 up
 
 ```
 
+```
+brctl show
+br-data         8000.a6c4c1482085       no              ens6
+                                                        eth0
+                                                        eth1
+                                                        veth-leaf1
+                                                        veth-leaf2
+
+```
 ###
 
 Absolutely — here’s a **step-by-step working guide** based on everything you’ve done and confirmed to get **Arista cEOS in Containerlab talking to BIG-IP** via `br-data` and enabling SSH access.
