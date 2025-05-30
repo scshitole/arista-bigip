@@ -1,5 +1,8 @@
 
-
+### Create arista containers
+```
+containerlab deploy -t spineleaf.yaml
+```
 ### Run this script to create br-data bridge
 ```
 chmod +x restore-veth-links.sh
