@@ -13,6 +13,8 @@ chmod +x restore-veth-links.sh
 
 ```
 sudo brctl addif br-data ens6
+sudo brctl addif br-data ens7
+sudo brctl addif br-data ens8
 sudo ip link set ens6 up
 ```
 ### If eth0 or eth1 are not attached to any bridge:
