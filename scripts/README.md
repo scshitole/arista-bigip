@@ -1,3 +1,16 @@
+
+### If eth0 or eth1 are not attached to any bridge:
+
+```
+sudo brctl addif br-data eth0
+sudo brctl addif br-data eth1
+sudo ip link set eth0 up
+sudo ip link set eth1 up
+
+```
+
+
+
 Absolutely — here’s a **step-by-step working guide** based on everything you’ve done and confirmed to get **Arista cEOS in Containerlab talking to BIG-IP** via `br-data` and enabling SSH access.
 
 ---
