@@ -5,7 +5,7 @@
 ```
 vi .env
 CVP_TOKEN=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.e...
-CVP_URL=cvp.something.net
+CVP_URL=cvp.something.net or can be 172.x.x.x
 
 ```
 ```
