@@ -13,8 +13,9 @@ curl -k -s -X POST "${BASE_URL}/login/authenticate.do" \
      -c cvp.cookie >/dev/null
 
 # 2) Use that cookie on your GET
-curl -k -s -X GET "${BASE_URL}/inventory/devices" \
-     -b cvp.cookie \
+curl -k -s -X GET "${BASE_URL}/inventory/containers" \
+     -H "session_id: ${TOKEN}" \
   | jq .
+
 
 ```
