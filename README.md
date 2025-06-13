@@ -15,3 +15,7 @@ Hostname             IP Address      Serial Number
 Arista7050SX3        172.16.60.195   JPXXXXXX
 
 ```
+**Go to [how to get Token from CVP to use API](docs/token.md)**
+
+**Go to [Execute simple GET ](docs/ex1.md)**
+
