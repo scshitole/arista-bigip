@@ -2,41 +2,17 @@
 
 ```
 # script.env
-CVP_HOST=cvp.example.com
-CVP_USER=cvpadmin
-CVP_PASS=MyP@ssw0rd
-CVP_PORT=443   # optional, defaults to 443
-
+CVP_UTL=10.23.X.X
+CVP_TOKEN=cvpadmin
 ```
 ### load in bash
 
 ```
-# at top of your bash script (or interactive shell)
-set -o allexport
-source ./script.env
-set +o allexport
-
+# source the file Env
+source .env
 ```
 ### cURL example
 
 ```
-#!/usr/bin/env bash
-set -euo pipefail
-
-# load env-file
-set -o allexport; source ./script.env; set +o allexport
-
-BASE_URL="https://${CVP_HOST}:${CVP_PORT}/cvpservice"
-AUTH_PAYLOAD=$(jq -n --arg u "$CVP_USER" --arg p "$CVP_PASS" '{userId:$u, password:$p}')
-
-# authenticate
-curl -k -s -X POST "$BASE_URL/login/authenticate.do" \
-     -H "Content-Type: application/json" \
-     -d "$AUTH_PAYLOAD" \
-     -c cvp.cookie
-
-# subsequent call using saved cookie
-curl -k -s -X GET "$BASE_URL/inventory/devices" \
-     -b cvp.cookie | jq .
 
 ```
