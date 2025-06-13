@@ -17,5 +17,21 @@ curl -k -s -X GET "${BASE_URL}/inventory/containers" \
      -H "session_id: ${TOKEN}" \
   | jq .
 
+[
+  {
+    "Key": "root",
+    "Name": "Tenant",
+    "CreatedBy": "cvp system",
+    "CreatedOn": 1749837122336,
+    "Mode": "expand"
+  },
+  {
+    "Key": "undefined_container",
+    "Name": "Undefined",
+    "CreatedBy": "cvp system",
+    "CreatedOn": 1749837122380,
+    "Mode": "expand"
+  }
+]
 
 ```
