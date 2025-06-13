@@ -7,15 +7,19 @@ set -o allexport; source ./script.env; set +o allexport
 BASE_URL="https://${CVP_HOST}/cvpservice"
 
 # 1) Authenticate, save cookie
-curl -k -s -X POST "${BASE_URL}/login/authenticate.do" \
+curl -k -v \
+     -X POST "https://${CVP_HOST}/cvpservice/login/authenticate.do" \
      -H "Content-Type: application/json" \
      -d "{\"userId\":\"${CVP_USER}\",\"password\":\"${CVP_PASS}\"}" \
-     -c cvp.cookie >/dev/null
+     -c cvp.cookie
+
 
 # 2) Use that cookie on your GET
-curl -k -s -X GET "${BASE_URL}/inventory/containers" \
-     -H "session_id: ${TOKEN}" \
+curl -k -s \
+     -X GET "https://${CVP_HOST}/cvpservice/inventory/containers" \
+     -b cvp.cookie \
   | jq .
+
 
 [
   {
