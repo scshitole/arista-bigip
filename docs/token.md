@@ -12,7 +12,7 @@ CVP_TOKEN=cvpadmin
 source .env
 
 ```
-### Run 
+### Run python script list_and_get_configlets.py to list Configuration on CVP
 
 ```
 python list_and_get_configlets.py
