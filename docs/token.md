@@ -2,7 +2,7 @@
 
 ```
 # script.env
-CVP_UTL=10.23.X.X
+CVP_URL=10.23.X.X
 CVP_TOKEN=cvpadmin
 ```
 ### load in bash
