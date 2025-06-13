@@ -12,6 +12,9 @@ CVP_TOKEN=cvpadmin
 source .env
 
 ```
+### Run 
+
+```
 python list_and_get_configlets.py
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.23.60.97'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(
@@ -36,8 +39,5 @@ interface Ethernet1
    no shutdown
 !
 
-
-
-```
 
 ```
