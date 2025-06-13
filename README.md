@@ -1,6 +1,7 @@
 # arista-bigip
 
-### First Create .env file
+### First Create a Token by navigating to Service Account
+### Second  Create .env file
 
 ```
 vi .env
